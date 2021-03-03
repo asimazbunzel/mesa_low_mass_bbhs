@@ -1,0 +1,35 @@
+&star_job
+
+   pgstar_flag = .false.
+
+   read_extra_star_job_inlist1 = .true.
+   extra_star_job_inlist1_name = 'inlist_common'
+
+   read_extra_star_job_inlist2 = .true.
+   extra_star_job_inlist2_name = 'inlist_composition'
+
+   set_initial_age = .true.
+   initial_age = 0
+   set_initial_model_number = .true.
+   initial_model_number = 0
+
+/ ! end of star_job namelist
+
+&controls
+
+   read_extra_controls_inlist1 = .true.
+   extra_controls_inlist1_name = 'inlist_common'
+
+   read_extra_controls_inlist2 = .true.
+   extra_controls_inlist2_name = 'inlist_composition'
+
+  ! input/output
+   photo_directory = 'photos1'
+   log_directory = 'LOGS1'
+   star_history_name = 'primary_history.data'
+
+/ ! end of controls namelist
+
+&pgstar
+
+/ ! end of pgstar namelist

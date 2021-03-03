@@ -1,0 +1,54 @@
+&bin2dco_options
+
+  ! filenames of the inlists with the binary control values:
+  !  - `star_plus_star_filename` contains the controls for the star + star simulation,
+  !  - `star_plus_pm_filename` holds controls of the star + point-mass simulation,
+   star_plus_star_filename = 'inlist_star_plus_star'
+   star_plus_pm_filename = 'inlist_star_plus_pm'
+
+  ! filenames with the controls for the core-collapse module (used only in combination
+  ! with the `high_mass_evolution` flag).
+  ! the `cc1_*` refers to the simulations of two non-degenerate stars (star + star),
+  ! while the `cc2_*` holds the controls for the star + point-mass case.
+   cc1_inlist_filename = 'inlist_cc'
+   cc2_inlist_filename = 'inlist_cc'
+
+  ! filename with the inlist controlling the common-envelope evolution. the same
+  ! logic as before applies to the `ce1_*` & `ce2_*` files.
+   ce1_inlist_filename = 'inlist_ce'
+   ce2_inlist_filename = 'inlist_ce'
+
+  ! only used if doing star + star simulation. stops as soon as MESA reaches the end
+  ! of the simulation (either as one would expect or because of a numerical failure).
+   stop_after_star_plus_star = .false.
+
+  ! controls to apply kicks to a simulation of star + point-mass.
+  ! `do_kicks` holds control on the natal-kick methods, while the `do_kicks_in_one_run`
+  ! loops over different natal-kicks as specified by the `natal_kicks_filename` control
+  ! found below.
+  ! if `do_kicks` is set to false, then no kicks are applied. if it is true and 
+  ! `do_kicks_in_one_run` is also true, then all the kicks in the `natal_kicks_filename`
+  ! will be simulated one after the other.
+  ! on the other hand, if `do_kicks_in_one_run` is false but `do_kicks` is true, then
+  ! the code will only run one kick. this is obtained by grabbing the row index that
+  ! the user wants to run, via the command line argument just after the executable, e.g.:
+  ! `./rn 10` will make the code to search for the 10th line in the `natal_kicks_filename`
+  ! and run the corresponding binary (of course, the number passed should be less or equal
+  ! to the number of rows in the file).
+   do_kicks = .false.
+   do_kicks_in_one_run = .false.
+   
+  ! filename with the natal-kicks. only used if one of the `do_kick*` flags are used
+  ! the first line of this file is the header which provides the name of the columns in it:
+  ! # natal-kick id -- kick magnitude -- theta -- phi
+  ! the first column is an id for the kick, which is used to name MESA output,
+  ! the second, third and fourth columns represent the actual natal-kick.
+   natal_kicks_filename = 'natal_kicks.data'
+
+  ! filenames where the information of the binary system at core-collapse can be found.
+  ! this is only important when running natal-kicks, as the code needs to know what were
+  ! the binary parameters when the more evolved star collapsed.
+   star_info_at_cc_filename = 'cc_data/star_at_core_collapse_1.data'
+   binary_info_at_cc_filename = 'cc_data/binary_at_core_collapse_1.data'
+
+/ ! end of bin2dco_options namelist

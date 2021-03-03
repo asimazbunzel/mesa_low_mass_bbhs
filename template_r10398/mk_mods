@@ -1,0 +1,33 @@
+#!/bin/bash
+
+function check_okay {
+   if [ $? -ne 0 ]; then
+      echo
+      echo "FAILED"
+      echo
+      exit 1
+   fi
+}
+
+
+if [ ! -r lib ]; then
+   mkdir lib
+else
+   rm -f lib/*
+fi
+
+if [ ! -r include ]; then
+   mkdir include
+else
+   rm -f include/*
+fi
+check_okay;
+
+cd src;
+cd ce; ./clean; check_okay;
+./mk; check_okay;
+./export;
+
+cd ../core_collapse; ./clean; check_okay;
+./mk; check_okay;
+./export;

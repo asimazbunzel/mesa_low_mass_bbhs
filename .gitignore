@@ -1,0 +1,33 @@
+# Compilation
+.depend
+*.a
+**/make/*.f
+**/make/*.f90
+**/make/*.mod
+**/make/*.smod
+*.o
+*.so
+**/include/
+**/lib/
+
+# Output
+**/LOGS1/
+**/LOGS2/
+**/LOGS_binary/
+**/photos1/
+**/photos2/
+**/png/
+
+# Restarts
+.restart
+
+# Misc
+.mesa_temp_cache/
+
+# BIN2DCO binary
+bin2dco
+.skip_star_plus_star
+
+# CE and CC output
+**/ce_data/
+**/cc_data/

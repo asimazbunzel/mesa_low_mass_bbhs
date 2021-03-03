@@ -1,0 +1,4 @@
+cp make/cc_lib.mod ../../include
+cp make/cc_def.mod ../../include
+
+cp make/libcc*.a ../../lib

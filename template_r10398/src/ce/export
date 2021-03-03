@@ -1,0 +1,4 @@
+cp make/ce_lib.mod ../../include
+cp make/ce_def.mod ../../include
+
+cp make/libce*.a ../../lib

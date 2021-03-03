@@ -1,0 +1,30 @@
+&star_job
+
+   read_extra_star_job_inlist1 = .true.
+   extra_star_job_inlist1_name = 'inlist_common'
+   
+   read_extra_star_job_inlist2 = .true.
+   extra_star_job_inlist2_name = 'inlist_composition'
+
+   load_saved_model = .false.
+   saved_model_name = 'companion_at_core_collapse.mod'
+
+/ ! end of star_job namelist
+
+&controls
+
+   read_extra_controls_inlist1 = .true.
+   extra_controls_inlist1_name = 'inlist_common'
+
+   read_extra_controls_inlist2 = .true.
+   extra_controls_inlist2_name = 'inlist_composition'
+
+  ! input/output
+   photo_directory = 'photos2'
+   log_directory = 'LOGS2'
+	
+/ ! end of controls namelist
+
+&pgstar
+      
+/ ! end of pgstar namelist

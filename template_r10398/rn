@@ -1,0 +1,28 @@
+#!/bin/bash
+
+
+# always remove restart file to start a fresh simulation
+rm -f .restart
+
+date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S"
+
+if [[ -e binary.exe ]]; then
+
+	./bin2dco.exe
+
+else
+
+   if [ "$#" -eq 0 ]; then
+      ./bin2dco
+   elif [ "$#" -eq 1 ]; then
+      ./bin2dco $1
+   else
+      printf "\nERROR: more arguments than needed were given \n\n"
+      exit 1
+   fi
+
+fi
+
+date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S"
+
+exit 0

@@ -1,0 +1,55 @@
+&binary_job
+
+   show_binary_log_description_at_start = .false.
+
+   binary_history_columns_file = 'column_lists/binary_history.list'
+
+   inlist_names(1) = 'inlist1' 
+   inlist_names(2) = 'inlist2'
+
+   evolve_both_stars = .true.
+
+/ ! end of binary_job namelist
+
+&binary_controls
+
+  ! initial parameters in inlist_binary
+   read_extra_binary_controls_inlist1 = .true.
+   extra_binary_controls_inlist1_name = 'inlist_binary'
+
+   history_name = 'binary_history.data'
+   log_directory = 'LOGS_binary'
+   history_interval = 1
+   append_to_star_history = .false.
+
+  ! mass-transfer controls
+   mass_transfer_alpha = 0.0d0
+   mass_transfer_beta = 0.0d0
+   mass_transfer_delta = 0.0d0
+   mass_transfer_gamma = 0.0d0
+   mdot_scheme = 'Kolb'
+   limit_retention_by_mdot_edd = .false.
+   do_jdot_gr = .false.
+   do_jdot_ml = .true.
+   do_jdot_mb = .false.
+   do_jdot_ls = .false.
+
+   keep_donor_fixed = .false.
+
+  ! numerical resolution during mass-transfer
+   fr = 0.025
+   varcontrol_case_a = 3d-4
+   varcontrol_case_b = 5d-4
+   varcontrol_ms = 5d-4
+   varcontrol_post_ms = 5d-4
+   dt_softening_factor = 0.4
+   implicit_scheme_tolerance = 1d-2
+   max_tries_to_achieve = 200
+   min_change_factor = 1.025
+   max_change_factor = 1.2d0
+   initial_change_factor = 1.2d0
+   change_factor_fraction = 0.8d0
+   min_mdot_for_implicit = 1d-10
+
+/ ! end of binary_controls namelist
+

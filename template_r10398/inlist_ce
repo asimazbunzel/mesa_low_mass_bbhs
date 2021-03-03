@@ -1,0 +1,57 @@
+&ce_controls
+
+  ! efficiency for removing envelope in binaries of two non-degenerate stars
+   alpha_two_stars = 1d0
+
+  ! efficiency for removing envelope in binaries of a star and a compact object (point mass)
+   alpha_xrb = 1d0
+  
+  ! Eddington scaling factor to trigger ce
+   edd_scaling_factor = 1d0
+
+  ! tolerance to consider ce detachment
+  ! a binary is considered to survive ce if (r-rl)/rl < tol_*
+  ! where tol_* depends on the type of binary system (two stars or star + point mass)
+   tol_two_stars = -0.01
+   tol_xrb = -0.05
+
+  ! wait this time before turning ce off when tolerance has been fulfilled
+   years_in_detachment = 0.1d0
+
+  ! increment mdot_rlof during this many years until reach max_mdot_rlof
+   years_to_max_mdot_rlof = 7.5d0
+
+  ! max value for rlo mdot
+   max_mdot_rlof = 0.05d0
+
+  ! consider accretion on accretor during ce. NOT READY TO USE
+   add_accretion_on_ce = .false.
+
+  ! save profile(s) at start/end of ce
+   save_profile_pre_ce = .false.
+   save_profile_after_ce = .false.
+
+  ! save model(s) at start/end of ce
+   save_model_pre_ce = .false.
+   save_model_after_ce = .false.
+
+  ! directory where profile(s) and model(s) during ce will be saved
+   ce_data_directory = 'ce_data'
+
+  ! filenames of profile(s) and model(s)
+   filename_donor_profile_pre_ce = 'profile_donor_pre_ce'
+   filename_donor_profile_after_ce = 'profile_donor_after_ce'
+   filename_donor_model_pre_ce = 'donor_pre_ce'
+   filename_donor_model_after_ce = 'donor_after_ce'
+   filename_accretor_profile_pre_ce = 'profile_accretor_pre_ce'
+   filename_accretor_profile_after_ce = 'profile_accretor_after_ce'
+   filename_accretor_model_pre_ce = 'accretor_pre_ce'
+   filename_accretor_model_after_ce = 'accretor_after_ce'
+
+  ! if (r-rl)/rl > max_relative_gap during ce, then consider it a merger
+   max_relative_gap = 50d0
+
+  ! if number_retries > max_number_retries_during_ce, consider it a merger
+   max_number_retries_during_ce = 300
+
+/ ! end of ce_controls namelist
