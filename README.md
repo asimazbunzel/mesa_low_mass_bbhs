@@ -1,6 +1,6 @@
 # Progenitors of low-mass binary black-hole mergers in the isolated binary evolution scenario
 
-This repository contains the MESA template used in the paper Garcia et al. 2020.
+This repository contains the MESA template used to obtain the population of BBH mergers in the paper from García, Simaz Bunzel, Chaty et al. 2021.
 
 ## Pre-requisites
 
@@ -29,8 +29,8 @@ be installed (supported version: **r10398**), and [MESASDK](http://www.astro.wis
 
 Inside the `src` folder two modules, `ce` and `core_collapse`, can be found which were developed in this work.
 
-The `ce` modules handles the evolution during a common-envelope phase (using the energy formalism) while the
-`core_collapse` simply computes relevant masses at the core-collapse stage of a massive star.
+The `ce` module handles the evolution during a common-envelope phase (using the energy formalism, [Ivanova et al. 2003](https://ui.adsabs.harvard.edu/abs/2013A%26ARv..21...59I/abstract)) while the
+`core_collapse` simply computes relevant masses at the core-collapse stage of a massive star [Fryer et al. 2012](https://ui.adsabs.harvard.edu/abs/2012ApJ...749...91F/abstract).
 
 `ce` is controlled via the file `inlist_ce` while `core_collapse` with controls found in `inlist_cc`, both using
 namelist as every MESA user control.
