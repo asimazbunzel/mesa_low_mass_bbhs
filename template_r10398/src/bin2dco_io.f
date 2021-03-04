@@ -1,3 +1,11 @@
+! ***********************************************************************
+!
+!   2021 Federico García and Adolfo Simaz Bunzel
+!
+!   Code to generate binary solutions from García, Simaz Bunzel, Chaty et al. 2021.
+!   Free to use, comes with no warranty. Please, cite the original paper.
+!
+! ***********************************************************************
 
 
       module bin2dco_io
