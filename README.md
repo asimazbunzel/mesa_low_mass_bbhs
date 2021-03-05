@@ -1,6 +1,6 @@
 # Progenitors of low-mass binary black-hole mergers in the isolated binary evolution scenario
 
-This repository contains the MESA template used to obtain the population of BBH mergers in the paper from García, Simaz Bunzel, Chaty et al. 2021.
+This repository contains the MESA template used to obtain the population of BBH mergers in [García, Simaz Bunzel, Chaty et al. 2021, accepted in A&A](https://arxiv.org/abs/2103.03161).
 
 ## Pre-requisites
 
